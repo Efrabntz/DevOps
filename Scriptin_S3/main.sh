@@ -60,7 +60,7 @@ done
 # Validar parámetros
 validate_params
 
-# Validar archivo txt
+# Validar archivo txt.
 validate_file
 
 # Verificar si el archivo existe
