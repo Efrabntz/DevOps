@@ -11,6 +11,15 @@ validate_params() {
     fi
 }
 
+# Función para verificar que el archivo FILE_TO_OPLOAD sea un .txt
+validate_file (){
+    if [ ! -f "$FILE_TO_UPLOAD" ] || [ "${FILE_TO_OPLOAD##*.}" !="txt"]; then
+        echo "EL archivo especificado no es un archivo de texto (.txt): $FILE_TO_OPLOAD"
+        exit 1
+    fi    
+
+}
+
 # Función para verificar si el archivo existe
 check_file_exists() {
     if [ ! -f "$FILE_TO_UPLOAD" ]; then
