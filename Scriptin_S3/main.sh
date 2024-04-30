@@ -13,7 +13,7 @@ validate_params() {
 
 # Función para verificar que el archivo FILE_TO_OPLOAD sea un .txt
 validate_file (){
-    if [ ! -f "$FILE_TO_UPLOAD" ] || [ "${FILE_TO_UPLOAD##*.}" !="txt" ]; then
+    if [ ! -f "$FILE_TO_UPLOAD" ] || [ "${FILE_TO_UPLOAD##*.}" != "txt" ]; then
         echo "EL archivo especificado no es un archivo de texto (.txt): $FILE_TO_UPLOAD"
         exit 1
     fi    
@@ -22,7 +22,7 @@ validate_file (){
 
 #funcion para limitar el peso de los archivos txt no superen los 2 kb..
 validate_size (){
-    if [ $(wc -c < "$FILE_TO_UPLOAD") -gt 5 ]; then
+    if [ $(wc -c < "$FILE_TO_UPLOAD") -gt 3072 ]; then
         echo "El archivo especificado es demasiado pesado. Debe pesar menos de 2KB"
         exit 1
     fi
