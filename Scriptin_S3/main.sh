@@ -22,7 +22,7 @@ validate_file (){
 
 #funcion para limitar el peso de los archivos txt no superen los 2 kb..
 validate_size (){
-    if [ $(wc -c < "$FILE_TO_UPLOAD") -gt 3072 ]; then
+    if [ $(wc -c < "$FILE_TO_UPLOAD") -gt 2 ]; then
         echo "El archivo especificado es demasiado pesado. Debe pesar menos de 2KB"
         exit 1
     fi
