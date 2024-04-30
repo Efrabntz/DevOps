@@ -13,7 +13,7 @@ validate_params() {
 
 # Función para verificar que el archivo FILE_TO_OPLOAD sea un .txt
 validate_file (){
-    if [ ! -f "$FILE_TO_UPLOAD" ] || [ "${FILE_TO_OPLOAD##*.}" !="txt"]; then
+    if [ ! -f "$FILE_TO_UPLOAD" ] || [ "${FILE_TO_UPLOAD##*.}" !="txt"]; then
         echo "EL archivo especificado no es un archivo de texto (.txt): $FILE_TO_OPLOAD"
         exit 1
     fi    
