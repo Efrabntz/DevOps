@@ -20,6 +20,14 @@ validate_file (){
 
 }
 
+#funcion para limitar el peso de los archivos txt no superen los 2 kb.
+validate_size (){
+    if [ $(wc -c < "$FILE_TO_UPLOAD") -gt 2048 ]; then
+        echo "El archivo especificado es demasiado pesado. Debe pesar menos de 2KB"
+        exit 1
+    fi
+}
+
 # Función para verificar si el archivo existe
 check_file_exists() {
     if [ ! -f "$FILE_TO_UPLOAD" ]; then
@@ -62,6 +70,9 @@ validate_params
 
 # Validar archivo txt.
 validate_file
+
+# Validar peso del archivo
+validate_size
 
 # Verificar si el archivo existe
 check_file_exists
